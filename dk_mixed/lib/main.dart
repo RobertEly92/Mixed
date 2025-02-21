@@ -1,3 +1,4 @@
+import 'package:dk_mixed/widgets/statusform.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,9 +16,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text(title)),
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+        body: StatusFormWidget(),
       ),
     );
   }

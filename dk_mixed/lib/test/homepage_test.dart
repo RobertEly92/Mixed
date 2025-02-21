@@ -18,15 +18,17 @@ void main(){
 
   });
 
-  testWidgets('test Stimmungsformular', (tester) async{
+  testWidgets('test Stimmungsformular on MainApp', (tester) async{
     //building widget
-    await tester.pumpWidget(StatusFormWidget());
+    await tester.pumpWidget(MainApp(title: 'Hans Wurst',));
 
     //finding widgets
     final formTitle = find.text('Wie gehts dir heute?');
     final healthQuestion = find.text('gesundheitliche Verfassung:');
     final bodyQuestion = find.text('körperliche Verfassung:');
     final overallQuestion = find.text('overall Verfassung:');
+
+    final submitButton = find.byKey(const Key('btnSubmit'));
 
     final sliders = find.byType(Slider);
 
@@ -37,5 +39,6 @@ void main(){
     expect(bodyQuestion, findsOneWidget);
     expect(overallQuestion, findsOneWidget);
     expect(sliders, findsExactly(3));
+    expect(submitButton, findsOne);
   });
 }
