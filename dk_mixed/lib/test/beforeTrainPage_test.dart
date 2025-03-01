@@ -1,17 +1,16 @@
-import 'dart:math';
-
 import 'package:dk_mixed/beforeTrainPage.dart';
-import 'package:dk_mixed/main.dart';
-import 'package:dk_mixed/widgets/statusform.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   testWidgets('test beforeTrainPage', (tester) async {
     //building widget
-    await tester.pumpWidget(BeforeTrainPage(
-      title: 'Hans Wurst',
+    await tester.pumpWidget(const MaterialApp(
+      home: Scaffold(
+        body: BeforeTrainPage(),
+      ),
     ));
+
     //finding widget
     final titleFinder = find.text('Hans Wurst');
 
@@ -19,17 +18,16 @@ void main() {
     expect(titleFinder, findsOneWidget);
   });
 
-  testWidgets('test Stimmungsformular on MainApp', (tester) async {
+  testWidgets('test beforeTrainingPage', (tester) async {
     //building widget
-    await tester.pumpWidget(MaterialApp(
+    await tester.pumpWidget(const MaterialApp(
       home: Scaffold(
-        body: BeforeTrainPage(title: 'Hans Wurst'),
+        body: BeforeTrainPage(),
       ),
     ));
 
     //finding widgets
     final formTitle = find.text('Wie gehts dir heute?');
-    final pageTitle = find.text('Hans Wurst');
     final healthQuestion = find.text('gesundheitliche Verfassung:');
     final bodyQuestion = find.text('körperliche Verfassung:');
     final overallQuestion = find.text('overall Verfassung:');
@@ -40,7 +38,6 @@ void main() {
 
     //expect
     expect(formTitle, findsOneWidget);
-    expect(pageTitle, findsOneWidget);
     expect(healthQuestion, findsOneWidget);
     expect(bodyQuestion, findsOneWidget);
     expect(overallQuestion, findsOneWidget);

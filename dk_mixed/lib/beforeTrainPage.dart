@@ -1,9 +1,7 @@
-import 'package:dk_mixed/widgets/statusform.dart';
 import 'package:flutter/material.dart';
 
 class BeforeTrainPage extends StatefulWidget {
-  BeforeTrainPage({super.key, required this.title});
-  final String title;
+  const BeforeTrainPage({super.key});
 
   @override
   State<BeforeTrainPage> createState() => _BeforeTrainPageState();
