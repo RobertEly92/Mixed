@@ -1,14 +1,15 @@
 import 'dart:math';
 
+import 'package:dk_mixed/beforeTrainPage.dart';
 import 'package:dk_mixed/main.dart';
 import 'package:dk_mixed/widgets/statusform.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main(){
-  testWidgets('test MainApp', (tester) async{
+  testWidgets('test beforeTrainPage', (tester) async{
     //building widget
-    await tester.pumpWidget( MainApp(title: 'Hans Wurst',));
+    await tester.pumpWidget( BeforeTrainPage(title: 'Hans Wurst',));
     //finding widget
     final titleFinder = find.text('Hans Wurst');
 
@@ -20,7 +21,7 @@ void main(){
 
   testWidgets('test Stimmungsformular on MainApp', (tester) async{
     //building widget
-    await tester.pumpWidget(MainApp(title: 'Hans Wurst',));
+    await tester.pumpWidget(BeforeTrainPage(title: 'Hans Wurst',));
 
     //finding widgets
     final formTitle = find.text('Wie gehts dir heute?');

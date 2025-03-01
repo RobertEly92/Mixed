@@ -1,23 +1,21 @@
+import 'package:dk_mixed/beforeTrainPage.dart';
 import 'package:dk_mixed/widgets/statusform.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MainApp(
+  runApp(const MainApp(
     title: '',
   ));
 }
-
 class MainApp extends StatelessWidget {
-  MainApp({super.key, required this.title});
-  final String title;
+  const MainApp({super.key, required this.title});
+    final String title;
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text(title)),
-        body: StatusFormWidget(),
-      ),
-    );
+    return BeforeTrainPage(title: title);
   }
 }
+
+
+
